@@ -13,5 +13,5 @@ public class PROYECTOTRANSVERSAL_grupo3 {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    //lol
+    //XDDDD
 }
