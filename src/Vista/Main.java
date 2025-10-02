@@ -1,11 +1,11 @@
 
-package proyecto.transversal_grupo.pkg3;
+package Vista;
 
 /**
  *
  * @author Admin
  */
-public class PROYECTOTRANSVERSAL_grupo3 {
+public class Main {
 
     /**
      * @param args the command line arguments
