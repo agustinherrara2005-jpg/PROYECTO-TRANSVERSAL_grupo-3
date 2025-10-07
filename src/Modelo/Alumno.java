@@ -1,23 +1,21 @@
 
 package Modelo;
 
+import java.time.LocalDate;
 public class Alumno {
     
 private int idAlumno;
 private String nombre;
 private String apellido;
-private int fechaDeNacimiento;
+private LocalDate fechaDeNacimiento;
 private int dni;
 private boolean estado;
 
     public Alumno() {}
 
-    public Alumno(int idAlumno, String nombre, String apellido, int fechaDeNacimiento, int dni, boolean estado) {
-        this.idAlumno = idAlumno;
+    public Alumno(String nombre, LocalDate fechaDeNacimiento, boolean estado) {
         this.nombre = nombre;
-        this.apellido = apellido;
         this.fechaDeNacimiento = fechaDeNacimiento;
-        this.dni = dni;
         this.estado = estado;
     }
 
@@ -45,11 +43,11 @@ private boolean estado;
         this.apellido = apellido;
     }
 
-    public int getFechaDeNacimiento() {
+    public LocalDate getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
-    public void setFechaDeNacimiento(int fechaDeNacimiento) {
+    public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
@@ -68,7 +66,7 @@ private boolean estado;
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-
+    
 @Override
     public String toString() {
         return "Alumno{" +
@@ -79,5 +77,5 @@ private boolean estado;
                 ", fechaNacimiento=" + fechaDeNacimiento +
                 ", estado=" + estado +
                 '}';
-    }
+    }   
 }

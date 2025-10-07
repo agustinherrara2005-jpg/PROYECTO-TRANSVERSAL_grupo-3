@@ -1,17 +1,29 @@
 
 package Vista;
 
-/**
- *
- * @author Admin
- */
-public class Main {
+import Modelo.Alumno;
+import Persistencia.sbConexion;
+import Persistencia.AlumnoData;
+import java.time.LocalDate;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+
+public class Main {
+        public static void main(String[] args) {
+            LocalDate fecha = LocalDate.now();
+            Alumno estudioso = new Alumno("Cristy", fecha, false); // entidad
+
+            new Main().conectar(estudioso);
+
+            System.out.println("Alumno " + estudioso.getNombre() + " guardado con éxito");
+        }
+
+        void conectar(Alumno estudioso) {
+            sbConexion conexion = new sbConexion("jdbc:mysql://localhost/universidadulp_3", "root", "");
+            AlumnoData alumnoData = new AlumnoData(conexion);
+
+            alumnoData.guardarAlumno(estudioso);
+            Alumno alu = alumnoData.buscarAlumno(estudioso.getIdAlumno());
+
+            System.out.println("Datos: " + alu);
+        }
     }
-    //XDDDD
-}
