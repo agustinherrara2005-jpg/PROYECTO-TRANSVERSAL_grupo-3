@@ -1,22 +1,29 @@
-
 package Modelo;
 
-import java.time.LocalDate;
 public class Alumno {
-    
-private int idAlumno;
-private String nombre;
-private String apellido;
-private LocalDate fechaDeNacimiento;
-private int dni;
-private boolean estado;
+    private int idAlumno;
+    private String nombre;
+    private String apellido;
+    private String dni;
+    private boolean estado;
 
-    public Alumno() {}
+    public Alumno() {
+        this.estado = true;
+    }
 
-    public Alumno(String nombre, LocalDate fechaDeNacimiento, boolean estado) {
+    public Alumno(int idAlumno, String nombre, String apellido, String dni, boolean estado) {
+        this.idAlumno = idAlumno;
         this.nombre = nombre;
-        this.fechaDeNacimiento = fechaDeNacimiento;
+        this.apellido = apellido;
+        this.dni = dni;
         this.estado = estado;
+    }
+
+    public Alumno(String nombre, String apellido, String dni) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.estado = true;
     }
 
     public int getIdAlumno() {
@@ -43,19 +50,11 @@ private boolean estado;
         this.apellido = apellido;
     }
 
-    public LocalDate getFechaDeNacimiento() {
-        return fechaDeNacimiento;
-    }
-
-    public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
-        this.fechaDeNacimiento = fechaDeNacimiento;
-    }
-
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
@@ -66,16 +65,15 @@ private boolean estado;
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-    
-@Override
+
+    @Override
     public String toString() {
         return "Alumno{" +
                 "idAlumno=" + idAlumno +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", dni=" + dni +
-                ", fechaNacimiento=" + fechaDeNacimiento +
+                ", dni='" + dni + '\'' +
                 ", estado=" + estado +
                 '}';
-    }   
+    }
 }

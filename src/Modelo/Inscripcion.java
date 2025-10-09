@@ -1,27 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
-/**
- *
- * @author kamil
- */
+import java.util.Date;
+
 public class Inscripcion {
     private int idInscripcion;
     private Alumno alumno;
     private Materia materia;
-    private int anioLectivo;
-    private int cuatrimestre;
-    private double nota;
+    private Date fecha;
+    private boolean estado;
 
-    public Inscripcion(Alumno alumno, Materia materia, int anioLectivo, int cuatrimestre, double nota) {
+    public Inscripcion() {
+        this.estado = true;
+    }
+
+    public Inscripcion(int idInscripcion, Alumno alumno, Materia materia, Date fecha, boolean estado) {
+        this.idInscripcion = idInscripcion;
         this.alumno = alumno;
         this.materia = materia;
-        this.anioLectivo = anioLectivo;
-        this.cuatrimestre = cuatrimestre;
-        this.nota = nota;
+        this.fecha = fecha;
+        this.estado = estado;
+    }
+
+    public Inscripcion(Alumno alumno, Materia materia, Date fecha) {
+        this.alumno = alumno;
+        this.materia = materia;
+        this.fecha = fecha;
+        this.estado = true;
     }
 
     public int getIdInscripcion() {
@@ -48,27 +52,30 @@ public class Inscripcion {
         this.materia = materia;
     }
 
-    public int getAnioLectivo() {
-        return anioLectivo;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setAnioLectivo(int anioLectivo) {
-        this.anioLectivo = anioLectivo;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
-    public int getCuatrimestre() {
-        return cuatrimestre;
+    public boolean isEstado() {
+        return estado;
     }
 
-    public void setCuatrimestre(int cuatrimestre) {
-        this.cuatrimestre = cuatrimestre;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
-    public double getNota() {
-        return nota;
-    }
-
-    public void setNota(double nota) {
-        this.nota = nota;
+    @Override
+    public String toString() {
+        return "Inscripcion{" +
+                "idInscripcion=" + idInscripcion +
+                ", alumno=" + alumno +
+                ", materia=" + materia +
+                ", fecha=" + fecha +
+                ", estado=" + estado +
+                '}';
     }
 }

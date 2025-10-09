@@ -1,23 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
-/**
- *
- * @author kamil
- */
 public class Materia {
     private int idMateria;
     private String nombre;
-    private int anio;
     private boolean estado;
 
-    public Materia(String nombre, int anio, boolean estado) {
+    public Materia() {
+        this.estado = true;
+    }
+
+    public Materia(int idMateria, String nombre, boolean estado) {
+        this.idMateria = idMateria;
         this.nombre = nombre;
-        this.anio = anio;
         this.estado = estado;
+    }
+
+    public Materia(String nombre) {
+        this.nombre = nombre;
+        this.estado = true;
     }
 
     public int getIdMateria() {
@@ -36,14 +36,6 @@ public class Materia {
         this.nombre = nombre;
     }
 
-    public int getAnio() {
-        return anio;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
     public boolean isEstado() {
         return estado;
     }
@@ -54,6 +46,10 @@ public class Materia {
 
     @Override
     public String toString() {
-        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return "Materia{" +
+                "idMateria=" + idMateria +
+                ", nombre='" + nombre + '\'' +
+                ", estado=" + estado +
+                '}';
     }
 }
