@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * Cambiar credenciales si corresponde.
  */
 public class sbConexion {
-    private static final String URL = "jdbc:mysql://localhost:3306/universdadulp_3?useSSL=false&serverTimezone=UTC";
+    private static final String URL = "jdbc:mysql://localhost:3306/gp3_nombre_base?useSSL=false&serverTimezone=UTC";
     private static final String USER = "root";
     private static final String PASS = ""; // cambiar si corresponde
 

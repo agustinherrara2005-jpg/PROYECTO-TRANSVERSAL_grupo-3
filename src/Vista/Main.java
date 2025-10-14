@@ -1,3 +1,5 @@
+package Vista;
+
 import Modelo.Alumno;
 import Modelo.Materia;
 import Modelo.Inscripcion;
