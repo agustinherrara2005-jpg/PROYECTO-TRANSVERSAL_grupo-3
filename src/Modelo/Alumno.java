@@ -1,29 +1,43 @@
 package Modelo;
 
+
+import java.util.Date;
+
+
 public class Alumno {
     private int idAlumno;
     private String nombre;
     private String apellido;
     private String dni;
+    private Date fecha;
     private boolean estado;
 
     public Alumno() {
         this.estado = true;
     }
 
-    public Alumno(int idAlumno, String nombre, String apellido, String dni, boolean estado) {
+    public Alumno(int idAlumno, String nombre, String apellido, String dni, Date fecha, boolean estado) {
         this.idAlumno = idAlumno;
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
+        this.fecha = fecha;
         this.estado = estado;
     }
 
-    public Alumno(String nombre, String apellido, String dni) {
+    public Alumno(String nombre, String apellido, String dni, Date fecha) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.estado = true;
+        this.fecha = fecha;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public int getIdAlumno() {

@@ -1,23 +1,35 @@
 package Modelo;
 
+
+
 public class Materia {
     private int idMateria;
     private String nombre;
+    private int anio;
     private boolean estado;
 
     public Materia() {
         this.estado = true;
     }
 
-    public Materia(int idMateria, String nombre, boolean estado) {
+    public Materia(int idMateria, String nombre, int anio, boolean estado) {
         this.idMateria = idMateria;
         this.nombre = nombre;
+        this.anio = anio;
         this.estado = estado;
     }
 
     public Materia(String nombre) {
         this.nombre = nombre;
         this.estado = true;
+    }
+    
+     public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
     public int getIdMateria() {

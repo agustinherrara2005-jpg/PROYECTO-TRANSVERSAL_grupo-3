@@ -5,6 +5,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class AlumnoData {
     private final Connection con;
 
@@ -13,12 +15,13 @@ public class AlumnoData {
     }
 
     public boolean guardarAlumno(Alumno alumno) {
-        String sql = "INSERT INTO alumno (nombre, apellido, dni, estado) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO alumno (`dni`, `nombre`, `apellido`, `fechaNacimiento`, `estado`) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            ps.setString(1, alumno.getNombre());
-            ps.setString(2, alumno.getApellido());
-            ps.setString(3, alumno.getDni());
-            ps.setBoolean(4, alumno.isEstado());
+            ps.setString(1, alumno.getDni());
+            ps.setString(2, alumno.getNombre());
+            ps.setString(3, alumno.getApellido());
+             ps.setDate(4, new java.sql.Date(alumno.getFecha().getTime()));
+            ps.setBoolean(5, alumno.isEstado());
             int affected = ps.executeUpdate();
             if (affected == 1) {
                 try (ResultSet rs = ps.getGeneratedKeys()) {

@@ -1,33 +1,28 @@
 package Modelo;
 
-import java.util.Date;
-
 public class Inscripcion {
     private int idInscripcion;
+    private int nota;
     private Alumno alumno;
     private Materia materia;
-    private Date fecha;
-    private boolean estado;
 
-    public Inscripcion() {
-        this.estado = true;
-    }
 
-    public Inscripcion(int idInscripcion, Alumno alumno, Materia materia, Date fecha, boolean estado) {
+    public Inscripcion(int idInscripcion, int nota, Alumno alumno, Materia materia) {
         this.idInscripcion = idInscripcion;
+        this.nota=nota;
         this.alumno = alumno;
         this.materia = materia;
-        this.fecha = fecha;
-        this.estado = estado;
+
     }
 
-    public Inscripcion(Alumno alumno, Materia materia, Date fecha) {
+    public Inscripcion(Alumno alumno, Materia materia) {
         this.alumno = alumno;
         this.materia = materia;
-        this.fecha = fecha;
-        this.estado = true;
     }
 
+    
+    
+    
     public int getIdInscripcion() {
         return idInscripcion;
     }
@@ -52,30 +47,20 @@ public class Inscripcion {
         this.materia = materia;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public int getNota() {
+        return nota;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setNota(int nota) {
+        this.nota = nota;
     }
 
     @Override
     public String toString() {
-        return "Inscripcion{" +
-                "idInscripcion=" + idInscripcion +
-                ", alumno=" + alumno +
-                ", materia=" + materia +
-                ", fecha=" + fecha +
-                ", estado=" + estado +
-                '}';
+        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
+
+
+
+    
 }

@@ -13,10 +13,11 @@ public class MateriaData {
     }
 
     public boolean guardarMateria(Materia m) {
-        String sql = "INSERT INTO materia (nombre, estado) VALUES (?, ?)";
+        String sql = "INSERT INTO materia (nombre,anio, estado) VALUES (?,?, ?)";
         try (PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, m.getNombre());
-            ps.setBoolean(2, m.isEstado());
+            ps.setInt(2, m.getAnio());
+            ps.setBoolean(3, m.isEstado());
             int affected = ps.executeUpdate();
             if (affected == 1) {
                 try (ResultSet rs = ps.getGeneratedKeys()) {
