@@ -1,4 +1,4 @@
-package Vista;
+    package Vista;
 
 import Modelo.Alumno;
 import Modelo.Materia;
